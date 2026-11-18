@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans JP', system-ui, -apple-system, sans-serif;
+    background-color: #faf8f5;
+    color: #181b2a;
+    margin: 0;
+  }
+
+  .dark body,
+  html.dark body {
+    background-color: #0f121e;
+    color: #f1f5f9;
+  }
+}
+
+.font-jp {
+  font-family: 'Noto Sans JP', 'Plus Jakarta Sans', sans-serif;
+}
+
+ruby {
+  ruby-align: center;
+}
+
+ruby rt {
+  font-size: 0.56em;
+  font-weight: 500;
+  color: #6366f1;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.dark ruby rt {
+  color: #a5b4fc;
+}
+
+@keyframes pulse-wave {
+  0%, 100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.wave-bar {
+  animation: pulse-wave 0.9s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Tactile Duolingo-inspired 3D button feel */
+.btn-3d {
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.btn-3d:active:not(:disabled) {
+  transform: translateY(2px);
+}
